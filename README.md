@@ -1,46 +1,139 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Preparando o ambiente
 
-## Available Scripts
+- Node + NPM;
+- Yarn;
+- Visual Studio Code e configurações.
 
-In the project directory, you can run:
+## Guias
 
-### `yarn start`
+[Instalação das ferramentas](https://www.notion.so/Instala-o-das-ferramentas-2e3f74b481204a69a1189a4cfe54adc7)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Atualização (versões diferentes)](https://www.notion.so/Atualiza-o-vers-es-diferentes-a3cdade154c045e694a0eb9dcceb3e24)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Tive problemas, e agora?](https://www.notion.so/Tive-problemas-e-agora-0b0640c844d145a6a7b0cefc04a74f75)
 
-### `yarn test`
+# Opcional - Configurações adicionais do VS Code
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se você já configurou todo o ambiente seguido os passos anteriores e quer deixar o Visual Studio Code com as mesmas configurações usadas pelo Diego nessa trilha, aqui vão algumas dicas:
 
-### `yarn build`
+## Extensões
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Você pode instalar as seguintes extensões a partir do menu de extensões do próprio VS Code:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **[Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)**: Essa extensão faz a correção ortográfica no nosso código, funcionando melhor com camelcase (por padrão, corrige apenas o inglês). Essa extensão é bastante útil mas é totalmente opcional;
+- **[Portuguese - Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese)**: É um dicionário de português para que a extensão **Code Spell Checker** consiga fazer também a correção ortográfica em Português;
+- **[Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)**: Essa extensão reconhece cores CSS escritas em qualquer lugar do nosso código. Por padrão reconhece apenas cores em hexadecimal mas você pode configurar para reconhecer cores no formato de palavras como `"red"` ou `"yellow"`. É uma extensão bastante útil, já que reconhece as cores diretamente no código;
+- [**CSS Modules**](https://marketplace.visualstudio.com/items?itemName=clinyong.vscode-css-modules): Essa é uma extensão que fornece o autocomplete para CSS Modules. Recomendamos o uso dela já que vai te ajudar com o autocomplete;
+- [**Tabnine**](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode): O Tabnine é uma extensão que usa de inteligência artificial para identificar o contexto do código e fornecer o autocomplete. Suporta diversas linguagens incluindo JavaScript e TypeScript. Existe uma versão paga mas também é possível usar a versão gratuita da extensão.
+Seu uso é totalmente opcional;
+- [**vscode-styled-components**](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components): Essa extensão fornece o syntax highlighting e intelliSense para a biblioteca [styled-components](https://styled-components.com/). Se você for utilizar essa biblioteca, o uso da extensão é bastante recomendado.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configurações do VS Code
 
-### `yarn eject`
+As seguintes configurações podem ser acessadas no VS Code apertando `Ctrl + Shift + P` (ou `cmd +` , digitando `Preferences: Open Settings (JSON)` e entrando na opção encontrada:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/79aca06f-8252-4865-a00f-d557469bb025/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/79aca06f-8252-4865-a00f-d557469bb025/Untitled.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+No arquivo JSON que abriu, adicione as seguintes configurações (certifique-se de adicionar dentro das chaves `{}`):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```json
+"terminal.integrated.fontSize": 14,
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+"editor.tabSize": 2,
+"editor.fontSize": 16,
+"editor.lineHeight": 26,
+"editor.semanticHighlighting.enabled": false,
 
-## Learn More
+"editor.rulers": [80, 120],
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+},
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+"files.exclude": {
+  "**/.git": true,
+  "**/.svn": true,
+  "**/.hg": true,
+  "**/CVS": true,
+  "**/.DS_Store": true,
+  // "**/node_modules": true
+},
+
+"files.associations": {
+  ".sequelizerc": "javascript",
+  ".stylelintrc": "json",
+  ".prettierrc": "json",
+  "*.tsx": "typescriptreact"
+},
+
+"typescript.tsserver.log": "verbose",
+"material-icon-theme.activeIconPack": "nest",
+
+"material-icon-theme.folders.associations": {
+  "infra": "app",
+  "entities": "class",
+  "domain": "class",
+  "schemas": "class",
+  "typeorm": "database",
+  "repositories": "mappings",
+  "http": "container",
+  "migrations": "tools",
+  "modules": "components",
+  "implementations": "core",
+  "dtos": "typescript",
+  "fakes": "mock",
+  "websockets": "pipe",
+  "protos": "pipe",
+  "grpc": "pipe",
+  "providers": "include",
+  "subscribers": "messages",
+  "useCases": "controller",
+  "kafka": "scripts",
+  "mappers": "meta",
+  "_shared": "shared",
+  "eslint-config": "tools",
+  "kube": "kubernetes"
+},
+
+"material-icon-theme.files.associations": {
+  "ormconfig.json": "database",
+  "tsconfig.json": "tune",
+  "*.proto": "3d",
+  "*.webpack.js": "webpack"
+},
+"window.menuBarVisibility": "toggle",
+"tabnine.experimentalAutoImports": true,
+"cSpell.enableFiletypes": [
+  "!asciidoc",
+  "!c",
+  "!cpp",
+  "!csharp",
+  "!go",
+  "!handlebars",
+  "!haskell",
+  "!jade",
+  "!java",
+  "!latex",
+  "!php",
+  "!pug",
+  "!python",
+  "!restructuredtext",
+  "!rust",
+  "!scala",
+  "!scss"
+],
+"cSpell.language": "en,pt",
+"editor.suggestSelection": "first",
+"cSpell.userWords": [
+  "chakra",
+  "middlewares",
+  "prefetch",
+  "rocketseat"
+],
+"workbench.productIconTheme": "fluent-icons",
+"terminal.integrated.showExitAlert": false,
+
+"splitHTMLAttributes.closingBracketOnNewLine": true,
+"window.zoomLevel": 1
+```
